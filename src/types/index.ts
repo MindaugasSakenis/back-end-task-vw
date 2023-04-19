@@ -1,12 +1,12 @@
 interface CompanyData {
   name: string;
-  phone: number;
+  phone: string;
 }
 
 interface CustomerData {
   firstName?: string;
   lastName?: string;
-  zipCode?: number;
+  zipCode?: string;
   mail?: string;
 }
 
