@@ -11,7 +11,12 @@ export const checkoutSchema: Joi.Schema = Joi.object({
     name: Joi.string().min(2).max(60).required(),
 
     // changed to string
-    phone: Joi.string().min(2).max(20).required(),
+    phone: Joi.string()
+      .min(2)
+      .max(20)
+      .pattern(/^[0-9]+$/)
+      .messages({ "string.pattern.base": `Phone number is should contain only numbers` })
+      .required(),
   }).required(),
 }).required();
 
